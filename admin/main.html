@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ELIB ADMIN</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->	
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">ELIB-NF</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="./main.html">Books<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./user.html">Peminjaman<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html">Logout<span class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container-fluid">
+        <div class="row mb-4">
+            
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col">Book list</div>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive" style="overflow: scroll; max-height: 500px;">
+                            <table class="table table-bordered" style="width: 1500px;">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>No</th>
+                                        <th style="width: 100px;">Name</th>
+                                        <th>Description</th>
+                                        <th>Category</th>
+                                        <th style="width: 100px;">Img Link</th>
+                                        <th style="width: 100px;">PDF Link</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="book-container">
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Book A</td>
+                                        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, mollitia. Quae fugit amet esse, vitae fugiat molestiae soluta atque, rerum asperiores modi libero impedit perferendis porro, ad consectetur harum nemo!</td>
+                                        <td>Multimedia</td>
+                                        <td>tes</td>
+                                        <td>tes</td>
+                                        <td>
+                                            <button class="btn btn-sm btn-primary" onclick="editBook()">Edit</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-12 border rounded" style="padding: 20px;" id="form-container">
+                <h4 class="mb-4">Add Book</h4>
+                <form id="form-add">
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" id="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <textarea id="desc" rows="5" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Category</label>
+                        <input type="text" class="form-control" id="category">
+                    </div>
+                    <div class="form-group">
+                        <label for="">IMG Link</label>
+                        <input type="text" class="form-control" id="img">
+                    </div>
+                    <div class="form-group">
+                        <label for="">PDF Link</label>
+                        <input type="text" class="form-control" id="pdf">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+    
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBEFCrB8_KUWWlCaNSZYXpC1TKFYFX4Zws",
+            authDomain: "elib-bb434.firebaseapp.com",
+            databaseURL: "https://elib-bb434.firebaseio.com",
+            projectId: "elib-bb434",
+            storageBucket: "elib-bb434.appspot.com",
+            messagingSenderId: "566713527365",
+            appId: "1:566713527365:web:fb7bd5ce384561834b072c"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        
+        // make auth and firestore references
+        const db = firebase.firestore();
+        
+        // update firestore settings
+        // db.settings({timestampsInSnapshots: true});
+    </script>
+    
+    <!--===============================================================================================-->
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="vendor/bootstrap/js/popper.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    
+    <script src="js/admin.js"></script>
+    
+</body>
+</html>

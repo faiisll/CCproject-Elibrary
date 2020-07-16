@@ -184,49 +184,41 @@ const getBook = stat =>{
         if(stat){
             response.data.forEach( d => {
                 html += `
-                <div class="col s12 m12 l6 xl6">
-                <div class="card horizontal">
-                <div class="card-image">
-                <img src="${d.img}">
-                </div>
-                <div class="card-stacked">
-                <div class="card-content">
-                <h5>${d.title}</h5>
-                <p>${d.description}</span>
-                <span class="new badge blue-grey" data-badge-caption="${d.category}"></span>
-                </div>
-                <div class="card-action" style="text-align: right;">
+                <tr>
+                <td>
+                <img width="100px" src="${d.img}" alt="">
+                </td>
+                <td>${d.title}</td>
+                <td>${d.description.slice(0, 50)}...</td>
+                <td><span class="new badge" data-badge-caption="${d.category}"></span></td>
+                <td>
                 <a class="waves-effect waves-light btn-small logged-in blue darken-2" onClick="addFav(${d.id})">Add</a>
-                </div>
-                </div>
-                </div>
-                </div>`
+                </td>
+                </tr>
+                `;
             });
         }else{
             response.data.forEach( d => {
                 html += `
-                <div class="col s12 m12 l6 xl6">
-                <div class="card horizontal">
-                <div class="card-image">
-                <img src="${d.img}">
-                </div>
-                <div class="card-stacked">
-                <div class="card-content">
-                <h5>${d.title}</h5>
-                <p>${d.description}</span>
-                <span class="new badge" data-badge-caption="${d.category}"></span>
-                </div>
-                <div class="card-action" style="text-align: right;">
+                <tr>
+                <td>
+                <img width="100px" src="${d.img}" alt="">
+                </td>
+                <td>${d.title}</td>
+                <td>${d.description.slice(0, 50)}...</td>
+                <td><span class="new badge" data-badge-caption="${d.category}"></span></td>
+                <td>
                 Login to add book
-                </div>
-                </div>
-                </div>
-                </div>`
+                </td>
+                </tr>`;
             });
         }
         
         
         card.innerHTML = html;
+        var table = new DataTable('#my-tbl',{
+            sortable: false
+        });
         return response.data;
     })
     .catch(function (error) {
