@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-datatables@latest/dist/vanilla-dataTables.min.js" type="text/javascript"></script>
     <title>E-Library</title>
 </head>
 <body class="grey lighten-3"">
@@ -107,28 +109,39 @@
     <div class="row">
         <div class="col s12 m12 l12">
             <h3 class="header">Book List</h3>
-            <input placeholder="Search Book" id="search">
         </div>
     </div>
-    <div class="row" id="book-list">
-        <div class="col s12 m12 l6 xl6">
-            <div class="card horizontal">
-                <div class="card-image">
-                    <img src="">
-                </div>
-                <div class="card-stacked">
-                    <div class="card-content">
-                        <h5>Title</h5>
-                        <p>I am a very simple card. I am good at containing small bits of information.</p>
-                        <span class="new badge red" data-badge-caption="Java"></span>
-                        
-                    </div>
-                    <div class="card-action" style="text-align: right;">
-                        <a class="waves-effect waves-light btn-small">Add</a>
-                    </div>
-                </div>
+    <div class="row">
+        <div class="card">
+            <div class="card-content">
+                <table id="my-tbl">
+                    <thead>
+                        <tr>
+                            <th>Cover</th>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Description</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody id="book-list">
+                        <tr>
+                            <td>
+                                <img width="100px" src="https://2.bp.blogspot.com/-rqslET2uMb4/Uay4QZDiYfI/AAAAAAAAAXM/-oEvi3Cj-uk/s1600/Download+Ebook+Tutorial+Photoshop+Bahasa+Indonesia.JPG" alt="">
+                            </td>
+                            <td>Eclair</td>
+                            <td>$0.87</td>
+                            <td></td>
+                            <td>
+                                <a class="waves-effect waves-light btn-small logged-in blue darken-2">Add</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
+        
     </div>
 </div>
 
