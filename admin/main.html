@@ -82,7 +82,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 col-12 border rounded" style="padding: 20px;" id="form-container">
+            <div class="col-md-4 col-12 border rounded" style="padding: 20px;" id="form-container" id="form-con">
                 <h4 class="mb-4">Add Book</h4>
                 <form id="form-add">
                     <div class="form-group">
@@ -106,6 +106,31 @@
                         <input type="text" class="form-control" id="pdf">
                     </div>
                     <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+                <form id="form-edit" style="display: none;">
+                    <input type="text" id="id" class="form-control" hidden>
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" id="title">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <textarea id="desc" rows="5" class="form-control"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Category</label>
+                        <input type="text" class="form-control" id="category">
+                    </div>
+                    <div class="form-group">
+                        <label for="">IMG Link</label>
+                        <input type="text" class="form-control" id="img">
+                    </div>
+                    <div class="form-group">
+                        <label for="">PDF Link</label>
+                        <input type="text" class="form-control" id="pdf">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <button type="reset" class="btn btn-danger">Cancel</button>
                 </form>
             </div>
         </div>
